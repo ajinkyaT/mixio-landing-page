@@ -26,7 +26,7 @@ interface ReviewProps {
 
 const reviewList: ReviewProps[] = [
   {
-    image: "https://github.com/shadcn.png",
+    image: "https://i.pravatar.cc/150?img=1",
     name: "John Doe",
     userName: "Product Manager",
     comment:
@@ -34,7 +34,7 @@ const reviewList: ReviewProps[] = [
     rating: 5.0,
   },
   {
-    image: "https://github.com/shadcn.png",
+    image: "https://i.pravatar.cc/150?img=2",
     name: "Sophia Collins",
     userName: "Cybersecurity Analyst",
     comment:
@@ -43,7 +43,7 @@ const reviewList: ReviewProps[] = [
   },
 
   {
-    image: "https://github.com/shadcn.png",
+    image: "https://i.pravatar.cc/150?img=3",
     name: "Adam Johnson",
     userName: "Chief Technology Officer",
     comment:
@@ -51,7 +51,7 @@ const reviewList: ReviewProps[] = [
     rating: 4.9,
   },
   {
-    image: "https://github.com/shadcn.png",
+    image: "https://i.pravatar.cc/150?img=4",
     name: "Ethan Parker",
     userName: "Data Scientist",
     comment:
@@ -59,7 +59,7 @@ const reviewList: ReviewProps[] = [
     rating: 5.0,
   },
   {
-    image: "https://github.com/shadcn.png",
+    image: "https://i.pravatar.cc/150?img=5",
     name: "Ava Mitchell",
     userName: "IT Project Manager",
     comment:
@@ -67,7 +67,7 @@ const reviewList: ReviewProps[] = [
     rating: 5.0,
   },
   {
-    image: "https://github.com/shadcn.png",
+    image: "https://i.pravatar.cc/150?img=6",
     name: "Isabella Reed",
     userName: "DevOps Engineer",
     comment:
@@ -117,7 +117,7 @@ export const TestimonialSection = () => {
                   <div className="flex flex-row items-center gap-4">
                     <Avatar>
                       <AvatarImage
-                        src="https://avatars.githubusercontent.com/u/75042455?v=4"
+                        src="https://i.pravatar.cc/150?img=7"
                         alt="radix"
                       />
                       <AvatarFallback>SV</AvatarFallback>

@@ -1,37 +1,37 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Icon } from "@/components/ui/icon";
-import { icons } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { LayoutGrid, Sparkles, Share2, Camera } from "lucide-react";
 
 interface BenefitsProps {
-  icon: string;
+  icon: React.ReactNode;
+  number: string;
   title: string;
   description: string;
 }
 
 const benefitList: BenefitsProps[] = [
   {
-    icon: "Blocks",
-    title: "Build Brand Trust",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+    icon: <LayoutGrid className="w-8 h-8 text-primary" />,
+    number: "01",
+    title: "Craft Viral Posts and Ads",
+    description: "Generate compelling videos and ads designed to captivate audiences and drive engagement",
   },
   {
-    icon: "LineChart",
-    title: "More Leads",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, natus consectetur.",
+    icon: <Sparkles className="w-8 h-8 text-primary" />,
+    number: "02",
+    title: "Unleash your Creativity",
+    description: "Produce high-quality content and stunning visuals with GenAI - Save hours on editing and focus on growing your audience",
   },
   {
-    icon: "Wallet",
-    title: "Higher Conversions",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur. A odio velit cum aliquam",
+    icon: <Camera className="w-8 h-8 text-primary" />,
+    number: "03",
+    title: "Create Professional Photoshoots",
+    description: "Produce stunning, professional-grade product photos and visuals without the need for expensive studios",
   },
   {
-    icon: "Sparkle",
-    title: "Test Marketing Ideas",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+    icon: <Share2 className="w-8 h-8 text-primary" />,
+    number: "04",
+    title: "Share Content with Ease",
+    description: "Schedule and share your videos and stories instantly across LinkedIn, TikTok, Instagram, and YouTube",
   },
 ];
 
@@ -41,41 +41,29 @@ export const BenefitsSection = () => {
       <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
         <div>
           <h2 className="text-lg text-primary mb-2 tracking-wider">Benefits</h2>
-
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Your Shortcut to Success
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
-            ducimus reprehenderit architecto rerum similique facere odit
-            deleniti necessitatibus quo quae.
+            Unlock the full potential of your marketing with our advanced GenAI models, powered by a proprietary AI engine. Effortlessly create conversion and engaging content at scale—driving results for your brand like never before
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-4 w-full">
-          {benefitList.map(({ icon, title, description }, index) => (
+          {benefitList.map((benefit, index) => (
             <Card
-              key={title}
-              className="bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number"
+              key={index}
+              className="bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75"
             >
-              <CardHeader>
-                <div className="flex justify-between">
-                  <Icon
-                    name={icon as keyof typeof icons}
-                    size={32}
-                    color="hsl(var(--primary))"
-                    className="mb-6 text-primary"
-                  />
-                  <span className="text-5xl text-muted-foreground/15 font-medium transition-all delay-75 group-hover/number:text-muted-foreground/30">
-                    0{index + 1}
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  {benefit.icon}
+                  <span className="text-4xl font-light text-muted-foreground/50">
+                    {benefit.number}
                   </span>
                 </div>
-
-                <CardTitle>{title}</CardTitle>
-              </CardHeader>
-
-              <CardContent className="text-muted-foreground">
-                {description}
+                <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+                <p className="text-muted-foreground">{benefit.description}</p>
               </CardContent>
             </Card>
           ))}

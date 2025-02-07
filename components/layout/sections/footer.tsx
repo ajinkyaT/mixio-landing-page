@@ -19,12 +19,6 @@ export const FooterSection = () => {
             <h3 className="font-bold text-lg">Contact</h3>
             <div>
               <Link href="#" className="opacity-60 hover:opacity-100">
-                Github
-              </Link>
-            </div>
-
-            <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
                 Twitter
               </Link>
             </div>
@@ -101,18 +95,26 @@ export const FooterSection = () => {
         </div>
 
         <Separator className="my-6" />
-        <section className="">
-          <h3 className="">
-            &copy; 2024 Designed and developed by
-            <Link
-              target="_blank"
-              href="https://github.com/leoMirandaa"
-              className="text-primary transition-all border-primary hover:border-b-2 ml-1"
+        <div className="text-center text-sm text-muted-foreground">
+          &copy; 2024 Mixio Pro. All rights reserved.
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-center gap-4">
+          <div className="flex items-center gap-2">
+            <a
+              href="/terms"
+              className="text-sm hover:underline underline-offset-2"
             >
-              Leo Miranda
-            </Link>
-          </h3>
-        </section>
+              Terms of Service
+            </a>
+            <a
+              href="/privacy"
+              className="text-sm hover:underline underline-offset-2"
+            >
+              Privacy Policy
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

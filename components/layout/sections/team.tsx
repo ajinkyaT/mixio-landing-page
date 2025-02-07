@@ -34,10 +34,6 @@ export const TeamSection = () => {
           url: "https://www.linkedin.com/in/leopoldo-miranda/",
         },
         {
-          name: "Github",
-          url: "https://github.com/leoMirandaa",
-        },
-        {
           name: "X",
           url: "https://x.com/leo_mirand4",
         },
@@ -71,10 +67,6 @@ export const TeamSection = () => {
           name: "LinkedIn",
           url: "https://www.linkedin.com/in/leopoldo-miranda/",
         },
-        {
-          name: "Github",
-          url: "https://github.com/leoMirandaa",
-        },
       ],
     },
     {
@@ -87,10 +79,6 @@ export const TeamSection = () => {
         {
           name: "LinkedIn",
           url: "https://www.linkedin.com/in/leopoldo-miranda/",
-        },
-        {
-          name: "Github",
-          url: "https://github.com/leoMirandaa",
         },
         {
           name: "X",
@@ -122,10 +110,6 @@ export const TeamSection = () => {
           name: "LinkedIn",
           url: "https://www.linkedin.com/in/leopoldo-miranda/",
         },
-        {
-          name: "Github",
-          url: "https://github.com/leoMirandaa",
-        },
       ],
     },
     {
@@ -138,10 +122,6 @@ export const TeamSection = () => {
         {
           name: "LinkedIn",
           url: "https://www.linkedin.com/in/leopoldo-miranda/",
-        },
-        {
-          name: "Github",
-          url: "https://github.com/leoMirandaa",
         },
         {
           name: "X",
@@ -167,8 +147,6 @@ export const TeamSection = () => {
     switch (socialName) {
       case "LinkedIn":
         return <LinkedInIcon />;
-      case "Github":
-        return <GithubIcon />;
       case "X":
         return <XIcon />;
     }

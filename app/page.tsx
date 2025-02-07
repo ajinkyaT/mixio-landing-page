@@ -12,27 +12,27 @@ import { TeamSection } from "@/components/layout/sections/team";
 import { TestimonialSection } from "@/components/layout/sections/testimonial";
 
 export const metadata = {
-  title: "Shadcn - Landing template",
-  description: "Free Shadcn landing page for developers",
+  title: "Mixio Pro - AI Marketing Tool",
+  description: "Create stunning marketing content with AI",
   openGraph: {
     type: "website",
-    url: "https://github.com/nobruf/shadcn-landing-page.git",
-    title: "Shadcn - Landing template",
-    description: "Free Shadcn landing page for developers",
+    url: "https://mixio.pro",
+    title: "Mixio Pro - AI Marketing Tool",
+    description: "Create stunning marketing content with AI",
     images: [
       {
         url: "https://res.cloudinary.com/dbzv9xfjp/image/upload/v1723499276/og-images/shadcn-vue.jpg",
         width: 1200,
         height: 630,
-        alt: "Shadcn - Landing template",
+        alt: "Mixio Pro - AI Marketing Tool",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://github.com/nobruf/shadcn-landing-page.git",
-    title: "Shadcn - Landing template",
-    description: "Free Shadcn landing page for developers",
+    site: "https://mixio.pro",
+    title: "Mixio Pro - AI Marketing Tool",
+    description: "Create stunning marketing content with AI",
     images: [
       "https://res.cloudinary.com/dbzv9xfjp/image/upload/v1723499276/og-images/shadcn-vue.jpg",
     ],
@@ -43,13 +43,18 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <div className="container flex flex-col items-center justify-center text-center py-8 md:py-12">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+          The <span className="text-primary">Only AI Tool</span> for Marketing You will Ever Need
+        </h2>
+      </div>
       <SponsorsSection />
       <BenefitsSection />
-      <FeaturesSection />
-      <ServicesSection />
+      {/* <FeaturesSection />
+      <ServicesSection /> */}
       <TestimonialSection />
       <TeamSection />
-      <CommunitySection />
+      {/* <CommunitySection /> */}
       <PricingSection />
       <ContactSection />
       <FAQSection />
