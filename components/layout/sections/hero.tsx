@@ -5,8 +5,11 @@ import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 
-const AnimatedText = () => {
-  const words = ["Drives Sales", "Goes Viral", "Tells Stories", "Builds Hype"];
+interface AnimatedTextProps {
+  words: string[];
+}
+
+const AnimatedText: React.FC<AnimatedTextProps> = ({ words }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
 
@@ -25,10 +28,10 @@ const AnimatedText = () => {
       }
     }, 100);
     return () => clearInterval(typingInterval);
-  }, [currentWordIndex]);
+  }, [currentWordIndex, words]);
 
   return (
-    <span className="text-primary inline-block min-w-[200px] md:min-w-[300px] transition-all duration-300">
+    <span className="text-primary inline-block min-w-[80px] transition-all duration-300">
       {displayedText}
     </span>
   );
@@ -42,12 +45,9 @@ export const HeroSection = () => {
       <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
         <div className="text-center space-y-8">
           <div className="max-w-screen-md mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Idea to media assets in minutes.
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 whitespace-nowrap">
+              Ideas to <AnimatedText words={["ads", "posts"]} /> in seconds
             </h1>
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 whitespace-nowrap">
-              With content that <AnimatedText />
-            </h2>
           </div>
 
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
