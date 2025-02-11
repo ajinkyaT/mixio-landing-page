@@ -36,6 +36,13 @@ export const TeamSection = () => {
       lastName: "A.",
       positions: ["Co-founder CTO, Full Stack."],
       socialNetworks: []
+    },
+    {
+      imageUrl: "https://placekitten.com/300/300",
+      firstName: "Mixio",
+      lastName: "AI",
+      positions: ["Witty AI, Platform Capability."],
+      socialNetworks: []
     }
   ];
   const socialIcon = (socialName: string) => {
@@ -54,11 +61,11 @@ export const TeamSection = () => {
           Team
         </h2>
         <h2 className="text-3xl md:text-4xl text-center font-bold">
-          The Company Dream Team
+          The Team
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
         {teamList.map(
           (
             { imageUrl, firstName, lastName, positions, socialNetworks },
