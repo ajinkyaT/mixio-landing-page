@@ -11,8 +11,11 @@ export const FooterSection = () => {
             <Link href="#" className="flex font-bold items-center">
               <ChevronsDownIcon className="w-9 h-9 mr-2 bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg border border-secondary" />
 
-              <h3 className="text-2xl">Shadcn</h3>
+              <h3 className="text-2xl">Mixio</h3>
             </Link>
+            <p className="mt-4 opacity-60">
+              Idea to multimedia assets in minutes.
+            </p>
           </div>
 
           <div className="flex flex-col gap-2">
