@@ -66,7 +66,7 @@ export const TeamSection = () => {
           ) => (
             <Card
               key={index}
-              className="bg-muted/60 dark:bg-card flex flex-col h-full overflow-hidden group/hoverimg"
+              className="bg-muted/60 dark:bg-card flex flex-col overflow-hidden group/hoverimg"
             >
               <CardHeader className="p-0 gap-0">
                 <div className="h-full overflow-hidden">
@@ -86,16 +86,14 @@ export const TeamSection = () => {
               {positions.map((position, index) => (
                 <CardContent
                   key={index}
-                  className={`pb-0 text-muted-foreground ${
-                    index === positions.length - 1 && "pb-6"
-                  }`}
+                  className="px-6 pb-2 text-muted-foreground last:pb-6"
                 >
                   {position}
                   {index < positions.length - 1 && <span>,</span>}
                 </CardContent>
               ))}
 
-              <CardFooter className="space-x-4 mt-auto">
+              <CardFooter className="space-x-4 px-6 pt-2 pb-6">
                 {socialNetworks.map(({ name, url }, index) => (
                   <Link
                     key={index}

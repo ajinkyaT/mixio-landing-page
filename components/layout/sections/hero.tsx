@@ -47,16 +47,16 @@ export const HeroSection = () => {
           <div className="max-w-screen-md mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-8 whitespace-nowrap">
               <div className="flex items-center justify-center gap-3">
-                <span>Ideas to</span>
-                <AnimatedText words={["ads", "posts"]} />
+                <span>Idea to</span>
+                <AnimatedText words={["Ad", "Reel", "Post"]} />
                 <span>in seconds</span>
               </div>
             </h1>
           </div>
 
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            Bring your ideas to life by creating stunning Ads, Videos, reels, in seconds with our AI Magic
-            — no technical skills needed, just your creativity.
+            Create stunning ad assets, social media posts or videos in seconds with our AI magic
+            — no technical skills needed, just your creativity
           </p>
 
           <div className="space-y-4 md:space-y-0 md:space-x-4">
