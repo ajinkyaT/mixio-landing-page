@@ -27,21 +27,21 @@ export const TeamSection = () => {
       imageUrl: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       firstName: "Ajinkya",
       lastName: "T.",
-      positions: ["Co-Founder, CEO, AI Lead."],
+      positions: ["Co-Founder AI/ML Expert"],
       socialNetworks: []
     },
     {
       imageUrl: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       firstName: "kaustubh",
       lastName: "A.",
-      positions: ["Co-founder CTO, Full Stack."],
+      positions: ["Co-founder Full Stack Expert"],
       socialNetworks: []
     },
     {
       imageUrl: "https://placekitten.com/300/300",
       firstName: "Mixio",
       lastName: "AI",
-      positions: ["Witty AI, Platform Capability."],
+      positions: ["Creative Specialist"],
       socialNetworks: []
     }
   ];
