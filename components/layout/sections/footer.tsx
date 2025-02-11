@@ -14,7 +14,7 @@ export const FooterSection = () => {
               <h3 className="text-2xl">Mixio</h3>
             </Link>
             <p className="mt-4 opacity-60">
-              Idea to multimedia assets in minutes.
+              Idea to media assets in minutes.
             </p>
           </div>
 
