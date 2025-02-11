@@ -24,14 +24,14 @@ interface SocialNetworkProps {
 export const TeamSection = () => {
   const teamList: TeamProps[] = [
     {
-      imageUrl: "https://i.pravatar.cc/250?img=1",
+      imageUrl: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       firstName: "Ajinkya",
       lastName: "T.",
       positions: ["Co-Founder, CEO, AI Lead."],
       socialNetworks: []
     },
     {
-      imageUrl: "https://i.pravatar.cc/250?img=2",
+      imageUrl: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       firstName: "kaustubh",
       lastName: "A.",
       positions: ["Co-founder CTO, Full Stack."],
