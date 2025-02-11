@@ -8,18 +8,28 @@ import Image from "next/image";
 const AnimatedText = () => {
   const words = ["Drives Sales", "Goes Viral", "Tells Stories", "Builds Hype"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWordIndex((prev) => (prev + 1) % words.length);
-    }, 1000); // Change word every 1 second
-
-    return () => clearInterval(interval);
-  }, []);
+    const fullText = words[currentWordIndex];
+    let charIndex = 0;
+    const typingInterval = setInterval(() => {
+      charIndex++;
+      setDisplayedText(fullText.substring(0, charIndex));
+      if (charIndex === fullText.length) {
+        clearInterval(typingInterval);
+        const pause = setTimeout(() => {
+          setCurrentWordIndex((prev) => (prev + 1) % words.length);
+          setDisplayedText("");
+        }, 1000);
+      }
+    }, 100);
+    return () => clearInterval(typingInterval);
+  }, [currentWordIndex]);
 
   return (
     <span className="text-primary inline-block min-w-[200px] md:min-w-[300px] transition-all duration-300">
-      {words[currentWordIndex]}
+      {displayedText}
     </span>
   );
 };
@@ -33,7 +43,7 @@ export const HeroSection = () => {
         <div className="text-center space-y-8">
           <div className="max-w-screen-md mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Boost Your Brand
+            Idea to media assets in minutes.
             </h1>
             <h2 className="text-3xl md:text-5xl font-bold mb-8 whitespace-nowrap">
               With content that <AnimatedText />
