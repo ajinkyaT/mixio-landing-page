@@ -31,7 +31,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ words }) => {
   }, [currentWordIndex, words]);
 
   return (
-    <span className="text-primary inline-block min-w-[80px] transition-all duration-300">
+    <span className="text-primary inline-block w-[100px] transition-all duration-300">
       {displayedText}
     </span>
   );
@@ -46,12 +46,16 @@ export const HeroSection = () => {
         <div className="text-center space-y-8">
           <div className="max-w-screen-md mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-8 whitespace-nowrap">
-              Ideas to <AnimatedText words={["ads", "posts"]} /> in seconds
+              <div className="flex items-center justify-center gap-3">
+                <span>Ideas to</span>
+                <AnimatedText words={["ads", "posts"]} />
+                <span>in seconds</span>
+              </div>
             </h1>
           </div>
 
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            Bring your ideas to life by creating stunning Ads, Videos, reels, in minutes with our AI Magic
+            Bring your ideas to life by creating stunning Ads, Videos, reels, in seconds with our AI Magic
             — no technical skills needed, just your creativity.
           </p>
 
