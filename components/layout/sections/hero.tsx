@@ -46,7 +46,7 @@ export const HeroSection = () => {
         <div className="text-center space-y-8">
           <div className="max-w-screen-md mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-8 whitespace-nowrap">
-              <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-6">
                 <span>Idea to</span>
                 <AnimatedText words={["Ad", "Reel", "Post"]} />
                 <span>in seconds</span>

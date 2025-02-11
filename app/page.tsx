@@ -1,6 +1,7 @@
 import { BenefitsSection } from "@/components/layout/sections/benefits";
 import { CommunitySection } from "@/components/layout/sections/community";
 import { ContactSection } from "@/components/layout/sections/contact";
+import { StepsSection } from "@/components/layout/sections/steps";
 import { FAQSection } from "@/components/layout/sections/faq";
 import { FeaturesSection } from "@/components/layout/sections/features";
 import { FooterSection } from "@/components/layout/sections/footer";
@@ -43,6 +44,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <StepsSection />
       <div className="container flex flex-col items-center justify-center text-center py-8 md:py-12">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
           The <span className="text-primary">Only AI Tool</span> for Marketing You will Ever Need
