@@ -48,7 +48,7 @@ export default function Home() {
           The <span className="text-primary">Only AI Tool</span> for Marketing You will Ever Need
         </h2>
       </div>
-      <SponsorsSection />
+      {/* <SponsorsSection /> */}
       <BenefitsSection />
       {/* <FeaturesSection />
       <ServicesSection /> */}
@@ -56,8 +56,8 @@ export default function Home() {
       <TeamSection />
       {/* <CommunitySection /> */}
       <PricingSection />
-      <ContactSection />
-      <FAQSection />
+      <ContactSection /> # change adress in India
+      <FAQSection /> # change FAQ questions
       <FooterSection />
     </>
   );
