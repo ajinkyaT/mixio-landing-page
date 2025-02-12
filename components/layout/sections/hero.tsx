@@ -49,7 +49,7 @@ export const HeroSection = () => {
               <div className="flex items-center justify-center gap-10">
                 <span>Idea to</span>
                 <AnimatedText words={["Ad Creative", "Viral Video", "Brand Post"]} />
-                <span>in seconds</span>
+                <div>in seconds</div>
               </div>
             </h1>
           </div>
