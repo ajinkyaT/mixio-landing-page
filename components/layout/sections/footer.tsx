@@ -13,7 +13,7 @@ export const FooterSection = () => {
               <h3 className="text-2xl">Mixio Labs</h3>
             </Link>
             <p className="mt-4 opacity-60">
-              Building Tomorrow's AI Solutions Today
+              Building Tomorrow&apos;s AI Solutions Today
             </p>
           </div>
 
@@ -103,11 +103,20 @@ export const FooterSection = () => {
         </div>
 
         <Separator className="my-8" />
-        <div className="text-center text-sm text-muted-foreground">
-          <p> {new Date().getFullYear()} Mixio Labs. All rights reserved.</p>
-          <p className="mt-1">
-            Locations: Pune • Bengaluru • Remote Worldwide
-          </p>
+
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-sm text-muted-foreground">
+            &copy; 2024 Mixio Labs. All rights reserved.
+          </div>
+
+          <div className="flex gap-4 text-sm text-muted-foreground">
+            <Link href="#" className="hover:text-foreground">
+              Privacy Policy
+            </Link>
+            <Link href="#" className="hover:text-foreground">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

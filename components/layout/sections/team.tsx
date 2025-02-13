@@ -85,7 +85,7 @@ export const TeamSection = () => {
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           College roommates with a decade-long partnership, bringing together deep AI expertise 
-          and full-stack development experience to build tomorrow's AI solutions.
+          and full-stack development experience to build tomorrow&apos;s AI solutions.
         </p>
       </div>
 
@@ -99,53 +99,57 @@ export const TeamSection = () => {
               key={index}
               className="bg-muted/60 dark:bg-card flex flex-col overflow-hidden group/hoverimg w-full"
             >
-              <CardHeader className="p-0 gap-0">
-                <div className="h-full overflow-hidden">
+              <CardHeader className="p-0">
+                <div className="overflow-hidden">
                   <Image
                     src={imageUrl}
                     alt={`${firstName} ${lastName}`}
-                    width={400}
-                    height={400}
-                    className="w-full aspect-square object-cover transition-all duration-200 ease-linear size-full group-hover/hoverimg:scale-[1.01]"
+                    width={500}
+                    height={500}
+                    className="w-full h-[300px] object-cover transition-transform duration-500 group-hover/hoverimg:scale-110"
                   />
                 </div>
-                <CardTitle className="py-6 pb-4 px-6 text-2xl">
-                  {firstName}
-                  <span className="text-primary ml-2">{lastName}</span>
-                </CardTitle>
               </CardHeader>
-              <div className="px-6 pb-2 text-muted-foreground">
-                {positions.map((position, index) => (
-                  <span key={index} className="font-medium">
-                    {position}
-                    {index < positions.length - 1 && <span className="mx-2">•</span>}
-                  </span>
-                ))}
-              </div>
-              <CardContent className="px-6 py-4">
-                <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                  {description.map((item, index) => (
-                    <li key={index}>{item}</li>
+
+              <CardContent className="flex-grow p-6">
+                <CardTitle className="text-2xl font-bold mb-2">
+                  {firstName} {lastName}
+                </CardTitle>
+
+                <div className="space-y-2 mb-4">
+                  {positions.map((position, index) => (
+                    <div
+                      key={index}
+                      className="text-sm font-medium text-primary"
+                    >
+                      {position}
+                    </div>
                   ))}
-                </ul>
+                </div>
+
+                <div className="space-y-1">
+                  {description.map((desc, index) => (
+                    <div key={index} className="text-sm text-muted-foreground">
+                      {desc}
+                    </div>
+                  ))}
+                </div>
               </CardContent>
-              {socialNetworks.length > 0 && (
-                <CardFooter className="px-6 pb-6 pt-2">
-                  <div className="flex gap-4">
-                    {socialNetworks.map(({ name, url }) => (
-                      <Link
-                        key={name}
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        {socialIcon(name)}
-                      </Link>
-                    ))}
-                  </div>
-                </CardFooter>
-              )}
+
+              <CardFooter className="p-6 pt-0">
+                <div className="flex gap-4">
+                  {socialNetworks.map(({ name, url }, index) => (
+                    <Link
+                      key={index}
+                      href={url}
+                      target="_blank"
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      {socialIcon(name)}
+                    </Link>
+                  ))}
+                </div>
+              </CardFooter>
             </Card>
           )
         )}
