@@ -13,32 +13,28 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "Is this template free?",
-    answer: "Yes. It is a free NextJS Shadcn template.",
+    question: "What types of AI solutions does Mixio Labs specialize in?",
+    answer: "We specialize in building AI agents, RAG (Retrieval Augmented Generation) systems, multimodal AI solutions, and privacy-preserving AI models. Our expertise spans across various domains including voice AI, document processing, and custom AI development.",
     value: "item-1",
   },
   {
-    question: "Duis aute irure dolor in reprehenderit in voluptate velit?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam consectetur sapiente, iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+    question: "How long does it typically take to develop an AI solution?",
+    answer: "Development timelines vary based on project complexity. We follow a rapid prototyping approach, typically delivering initial prototypes within 2-4 weeks. Full production-ready solutions can take 2-3 months, depending on requirements and integration needs.",
     value: "item-2",
   },
   {
-    question:
-      "Lorem ipsum dolor sit amet Consectetur natus dolor minus quibusdam?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis.",
+    question: "Do you offer self-hosted AI solutions for data privacy?",
+    answer: "Yes, we specialize in developing self-hosted AI solutions that keep your data secure and compliant. Our privacy-first approach ensures that sensitive information never leaves your infrastructure while maintaining high performance and reliability.",
     value: "item-3",
   },
   {
-    question: "Excepteur sint occaecat cupidata non proident sunt?",
-    answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    question: "What industries do you work with?",
+    answer: "We work across various industries including healthcare, legal tech, sales intelligence, and enterprise solutions. Our experience includes projects in customer experience, business intelligence, and creative technology sectors.",
     value: "item-4",
   },
   {
-    question:
-      "Enim ad minim veniam, quis nostrud exercitation ullamco laboris?",
-    answer: "consectetur adipisicing elit. Sint labore.",
+    question: "What is your development process like?",
+    answer: "Our process involves four key stages: Discovery (understanding your vision), Design (architecture planning), Development (rapid prototyping and iterative refinement), and Delivery (testing, deployment, and knowledge transfer). We maintain clear communication throughout the process.",
     value: "item-5",
   },
 ];
@@ -48,11 +44,11 @@ export const FAQSection = () => {
     <section id="faq" className="container md:w-[700px] py-24 sm:py-32">
       <div className="text-center mb-8">
         <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-          FAQS
+          FAQ
         </h2>
 
         <h2 className="text-3xl md:text-4xl text-center font-bold">
-          Common Questions
+          Frequently Asked Questions
         </h2>
       </div>
 
