@@ -1,69 +1,62 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+
 import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { useTheme } from "next-themes";
 
-interface AnimatedTextProps {
-  words: string[];
-}
-
-const AnimatedText: React.FC<AnimatedTextProps> = ({ words }) => {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("");
-
-  useEffect(() => {
-    const fullText = words[currentWordIndex];
-    let charIndex = 0;
-    const typingInterval = setInterval(() => {
-      charIndex++;
-      setDisplayedText(fullText.substring(0, charIndex));
-      if (charIndex === fullText.length) {
-        clearInterval(typingInterval);
-        const pause = setTimeout(() => {
-          setCurrentWordIndex((prev) => (prev + 1) % words.length);
-          setDisplayedText("");
-        }, 1000);
-      }
-    }, 100);
-    return () => clearInterval(typingInterval);
-  }, [currentWordIndex, words]);
-
-  return (
-    <span className="text-primary inline-block w-[180px] transition-all duration-300">
-      {displayedText}
-    </span>
-  );
-};
+import { heroSection } from "@/config/landing";
+import { cn } from "@/lib/utils";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { HeroHighlight } from "@/components/ui/hero-highlight";
+import { Typewriter } from "@/components/ui/typewriter";
 
 export const HeroSection = () => {
   const { theme } = useTheme();
-  
+
   return (
-    <section className="container w-full">
-      <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-10 md:py-24">
-        <div className="text-center space-y-8">
-          <div className="max-w-screen-md mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-8 whitespace-nowrap">
-              <div className="flex items-center justify-center gap-10">
-                <span>Building</span>
-                <AnimatedText words={["AI Agents", "RAG Systems", "Voice AI"]} />
-                <div>Solutions</div>
-              </div>
-            </h1>
-          </div>
+    <HeroHighlight>
+      <section className="container flex w-full items-center md:min-h-[calc(100vh-128px)]">
+        <div className="mx-auto grid place-items-center gap-8 py-20 md:py-24 lg:max-w-screen-xl">
+          <div className="space-y-8 text-center">
+            <div className="mx-auto max-w-screen-md text-center">
+              <h1 className="mb-6 whitespace-nowrap text-3xl font-bold md:text-6xl">
+                <div className="flex flex-col items-center justify-center md:gap-2">
+                  <div className="mx-auto flex min-w-[285px] justify-start gap-3 md:min-w-[560px]">
+                    <span className="">Building</span>
+                    <span className="text-primary font-extrabold">
+                      <Typewriter
+                        words={heroSection.typewriterWords}
+                        loop
+                        typingSpeed={70}
+                        wordPause={1000}
+                        className="inline-block min-w-[120px] text-left md:min-w-[200px]"
+                      />
+                    </span>
+                  </div>
+                  <div>Solutions</div>
+                </div>
+              </h1>
+            </div>
 
-          <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            Transform your AI vision into reality with Mixio Labs. We specialize in turning innovative 
-            AI concepts into production-ready solutions.
-          </p>
+            <p className="mx-auto max-w-screen-sm text-sm text-muted-foreground md:text-xl">
+              {heroSection.description}
+            </p>
 
-          <div className="space-y-4 md:space-y-0 md:space-x-4">
-            <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
-              Get Started
-              <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
-            </Button>
+            <div className="space-y-4 md:space-x-4 md:space-y-0">
+              <Link
+                href="#contact"
+                className={cn(
+                  "group/arrow",
+                  buttonVariants({ size: "lg" }),
+                  "w-auto font-bold",
+                )}
+              >
+                {heroSection.ctaText}
+                <ArrowRight className="ml-2 size-5 transition-transform group-hover/arrow:translate-x-1" />
+              </Link>
+            </div>
           </div>
 
           <div className="relative group mt-24">
@@ -78,7 +71,7 @@ export const HeroSection = () => {
             <div className="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg"></div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </HeroHighlight>
   );
 };
