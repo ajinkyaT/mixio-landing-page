@@ -6,37 +6,48 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-enum ProService {
-  YES = 1,
-  NO = 0,
-}
 interface ServiceProps {
   title: string;
-  pro: ProService;
   description: string;
+  featured?: boolean;
 }
+
 const serviceList: ServiceProps[] = [
   {
-    title: "Custom Domain Integration",
+    title: "Agentic Workflows",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit adipisicing.",
-    pro: 0,
+      "Build intelligent AI agents that can autonomously handle complex tasks and workflows in your business processes.",
+    featured: true,
   },
   {
-    title: "Social Media Integrations",
+    title: "Multimodal AI",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, dicta.",
-    pro: 0,
+      "Leverage cutting-edge AI models for processing and generating images, video, and audio content with state-of-the-art accuracy.",
+    featured: true,
   },
   {
-    title: "Email Marketing Integrations",
-    description: "Lorem dolor sit amet adipisicing.",
-    pro: 0,
+    title: "RAG Systems",
+    description: 
+      "Implement advanced Retrieval Augmented Generation systems for accurate, context-aware AI responses using your proprietary data.",
+    featured: true,
   },
   {
-    title: "SEO Optimization",
-    description: "Lorem ipsum dolor sit amet consectetur.",
-    pro: 1,
+    title: "Data Extraction",
+    description: 
+      "Extract structured data from unstructured sources like PDFs, documents, and images using our advanced AI processing pipeline.",
+    featured: false,
+  },
+  {
+    title: "Privacy-First AI",
+    description: 
+      "Deploy self-hosted AI models that keep your data secure and compliant while delivering powerful AI capabilities.",
+    featured: true,
+  },
+  {
+    title: "End-to-End Development",
+    description: 
+      "From rapid prototyping to production deployment, we handle the complete lifecycle of your AI solution.",
+    featured: false,
   },
 ];
 
@@ -44,35 +55,35 @@ export const ServicesSection = () => {
   return (
     <section id="services" className="container py-24 sm:py-32">
       <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-        Services
+        Our Services
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        Grow Your Business
+        AI Solutions We Offer
       </h2>
-      <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        From marketing and sales to operations and strategy, we have the
-        expertise to help you achieve your goals.
+      <h3 className="md:w-3/4 mx-auto text-xl text-center text-muted-foreground mb-8">
+        We specialize in building cutting-edge AI solutions that help businesses innovate and scale. 
+        Our expertise spans across various AI domains and technologies.
       </h3>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-4 w-full lg:w-[60%] mx-auto">
-        {serviceList.map(({ title, description, pro }) => (
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto">
+        {serviceList.map(({ title, description, featured }) => (
           <Card
             key={title}
             className="bg-muted/60 dark:bg-card h-full relative"
           >
             <CardHeader>
               <CardTitle>{title}</CardTitle>
-              <CardDescription>{description}</CardDescription>
+              <CardDescription className="mt-2">{description}</CardDescription>
             </CardHeader>
-            <Badge
-              data-pro={ProService.YES === pro}
-              variant="secondary"
-              className="absolute -top-2 -right-3 data-[pro=false]:hidden"
-            >
-              PRO
-            </Badge>
+            {featured && (
+              <Badge
+                variant="secondary"
+                className="absolute -top-2 -right-3"
+              >
+                Featured
+              </Badge>
+            )}
           </Card>
         ))}
       </div>

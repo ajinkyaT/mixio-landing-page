@@ -31,7 +31,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ words }) => {
   }, [currentWordIndex, words]);
 
   return (
-    <span className="text-primary inline-block w-[120px] transition-all duration-300">
+    <span className="text-primary inline-block w-[180px] transition-all duration-300">
       {displayedText}
     </span>
   );
@@ -47,21 +47,21 @@ export const HeroSection = () => {
           <div className="max-w-screen-md mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-8 whitespace-nowrap">
               <div className="flex items-center justify-center gap-10">
-                <span>Idea to</span>
-                <AnimatedText words={["Ad Creative", "Viral Video", "Brand Post"]} />
-                <div>in seconds</div>
+                <span>Building</span>
+                <AnimatedText words={["AI Agents", "RAG Systems", "Voice AI"]} />
+                <div>Solutions</div>
               </div>
             </h1>
           </div>
 
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            Create stunning ad assets, social media posts or videos in seconds with our AI magic
-            — no technical skills needed, just your creativity
+            Transform your AI vision into reality with Mixio Labs. We specialize in turning innovative 
+            AI concepts into production-ready solutions.
           </p>
 
           <div className="space-y-4 md:space-y-0 md:space-x-4">
             <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
-              Try For Free Now
+              Get Started
               <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
             </Button>
           </div>
@@ -73,7 +73,7 @@ export const HeroSection = () => {
               height={1200}
               className="w-full md:w-[1200px] mx-auto rounded-lg relative rounded-lg leading-none flex items-center border border-t-2 border-secondary border-t-primary/30"
               src={theme === "light" ? "/hero-image-light.jpeg" : "/hero-image-dark.jpeg"}
-              alt="dashboard"
+              alt="AI Solutions Dashboard"
             />
             <div className="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg"></div>
           </div>
