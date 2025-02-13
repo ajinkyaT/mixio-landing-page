@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { LayoutGrid, Sparkles, Share2, Camera } from "lucide-react";
+import { Shield, Zap, Users, BarChart } from "lucide-react";
 
 interface BenefitsProps {
   icon: React.ReactNode;
@@ -10,28 +10,28 @@ interface BenefitsProps {
 
 const benefitList: BenefitsProps[] = [
   {
-    icon: <LayoutGrid className="w-8 h-8 text-primary" />,
+    icon: <Zap className="w-8 h-8 text-primary" />,
     number: "01",
-    title: "Craft Viral Posts and Ads",
-    description: "Generate compelling videos and ads designed to captivate audiences and drive engagement",
+    title: "Rapid Development",
+    description: "Get your AI solution from concept to production in weeks, not months, with our proven development process.",
   },
   {
-    icon: <Sparkles className="w-8 h-8 text-primary" />,
+    icon: <Shield className="w-8 h-8 text-primary" />,
     number: "02",
-    title: "Unleash your Creativity",
-    description: "Produce high-quality content and stunning visuals with GenAI - Save hours on editing and focus on growing your audience",
+    title: "Privacy-First Approach",
+    description: "Keep your data secure with our self-hosted AI solutions that never compromise on privacy or performance.",
   },
   {
-    icon: <Camera className="w-8 h-8 text-primary" />,
+    icon: <Users className="w-8 h-8 text-primary" />,
     number: "03",
-    title: "Create Professional Photoshoots",
-    description: "Produce stunning, professional-grade product photos and visuals without the need for expensive studios",
+    title: "Expert Team",
+    description: "Work with seasoned AI engineers and researchers who bring deep expertise in building production-ready AI systems.",
   },
   {
-    icon: <Share2 className="w-8 h-8 text-primary" />,
+    icon: <BarChart className="w-8 h-8 text-primary" />,
     number: "04",
-    title: "Share Content with Ease",
-    description: "Schedule and share your videos and stories instantly across LinkedIn, TikTok, Instagram, and YouTube",
+    title: "Measurable Impact",
+    description: "See tangible improvements in efficiency and performance with our AI solutions, backed by clear metrics and analytics.",
   },
 ];
 
@@ -42,10 +42,10 @@ export const BenefitsSection = () => {
         <div>
           <h2 className="text-lg text-primary mb-2 tracking-wider">Benefits</h2>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Your Shortcut to Success
+            Why Partner With Us
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Unlock the full potential of your marketing with our advanced GenAI models, powered by a proprietary AI engine. Effortlessly create conversion and engaging content at scale—driving results for your brand like never before
+            We combine deep AI expertise with robust engineering practices to deliver solutions that drive real business value. Our focus is on building AI systems that are not just powerful, but also practical, secure, and scalable.
           </p>
         </div>
 

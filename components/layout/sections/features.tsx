@@ -10,40 +10,40 @@ interface FeaturesProps {
 
 const featureList: FeaturesProps[] = [
   {
-    icon: "TabletSmartphone",
-    title: "Mobile Friendly",
+    icon: "Brain",
+    title: "Advanced AI Models",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, consectetur.",
+      "Access state-of-the-art AI models optimized for your specific use case, ensuring high performance and accuracy.",
   },
   {
-    icon: "BadgeCheck",
-    title: "Social Proof",
+    icon: "Shield",
+    title: "Enterprise Security",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Natus consectetur, odio ea accusamus aperiam.",
+      "Built-in security features including data encryption, access controls, and compliance with industry standards.",
   },
   {
-    icon: "Goal",
-    title: "Targeted Content",
+    icon: "Scale",
+    title: "Scalable Architecture",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. odio ea accusamus aperiam.",
+      "Solutions designed to scale seamlessly with your needs, from proof-of-concept to enterprise-wide deployment.",
   },
   {
-    icon: "PictureInPicture",
-    title: "Strong Visuals",
+    icon: "Workflow",
+    title: "Custom Integration",
     description:
-      "Lorem elit. A odio velit cum aliquam. Natus consectetur dolores, odio ea accusamus aperiam.",
+      "Seamless integration with your existing systems and workflows, minimizing disruption to your operations.",
   },
   {
-    icon: "MousePointerClick",
-    title: "Clear CTA",
+    icon: "LineChart",
+    title: "Performance Analytics",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing. odio ea accusamus consectetur.",
+      "Comprehensive monitoring and analytics to track system performance, usage patterns, and business impact.",
   },
   {
-    icon: "Newspaper",
-    title: "Clear Headline",
+    icon: "HeartHandshake",
+    title: "Ongoing Support",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur.",
+      "Dedicated support and maintenance to ensure your AI solutions continue to evolve and perform optimally.",
   },
 ];
 
@@ -55,13 +55,12 @@ export const FeaturesSection = () => {
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        What Makes Us Different
+        Enterprise-Grade AI Solutions
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-        fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
-        facere tenetur.
+        Our AI solutions come with powerful features designed to meet the demanding 
+        needs of modern enterprises while ensuring security, scalability, and reliability.
       </h3>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

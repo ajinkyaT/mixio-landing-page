@@ -26,52 +26,51 @@ interface ReviewProps {
 
 const reviewList: ReviewProps[] = [
   {
-    image: "https://i.pravatar.cc/150?img=1",
-    name: "John Doe",
-    userName: "Product Manager",
+    image: "https://i.pravatar.cc/150?img=11",
+    name: "Sarah Chen",
+    userName: "AI Product Lead",
     comment:
-      "Wow NextJs + Shadcn is awesome!. This template lets me change colors, fonts and images to match my brand identity. ",
+      "Mixio Labs delivered an exceptional RAG system that significantly improved our document processing accuracy. Their expertise in AI and attention to detail made the integration seamless.",
     rating: 5.0,
   },
   {
-    image: "https://i.pravatar.cc/150?img=2",
-    name: "Sophia Collins",
-    userName: "Cybersecurity Analyst",
+    image: "https://i.pravatar.cc/150?img=20",
+    name: "Michael Patel",
+    userName: "CTO, HealthTech Startup",
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. ",
-    rating: 4.8,
-  },
-
-  {
-    image: "https://i.pravatar.cc/150?img=3",
-    name: "Adam Johnson",
-    userName: "Chief Technology Officer",
-    comment:
-      "Lorem ipsum dolor sit amet,exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "The privacy-first approach of Mixio Labs was crucial for our healthcare AI implementation. They helped us build a secure, HIPAA-compliant solution without compromising on performance.",
     rating: 4.9,
   },
   {
-    image: "https://i.pravatar.cc/150?img=4",
-    name: "Ethan Parker",
-    userName: "Data Scientist",
+    image: "https://i.pravatar.cc/150?img=32",
+    name: "David Rodriguez",
+    userName: "VP of Engineering",
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "Working with Mixio Labs transformed our customer service with their AI agent solution. The rapid development and iterative approach helped us launch faster than expected.",
     rating: 5.0,
   },
   {
-    image: "https://i.pravatar.cc/150?img=5",
-    name: "Ava Mitchell",
-    userName: "IT Project Manager",
+    image: "https://i.pravatar.cc/150?img=41",
+    name: "Emma Thompson",
+    userName: "Director of Innovation",
     comment:
-      "Lorem ipsum dolor sit amet, tempor incididunt  aliqua. Ut enim ad minim veniam, quis nostrud incididunt consectetur adipiscing elit.",
+      "The expertise of the Mixio Labs team in both AI and engineering is impressive. They not only built our AI solution but also ensured it integrated perfectly with our existing systems.",
+    rating: 4.8,
+  },
+  {
+    image: "https://i.pravatar.cc/150?img=50",
+    name: "Alex Kumar",
+    userName: "Head of Data Science",
+    comment:
+      "Mixio Labs helped us implement a complex multimodal AI system that handles both text and image data. Their solution significantly improved our processing efficiency.",
     rating: 5.0,
   },
   {
-    image: "https://i.pravatar.cc/150?img=6",
-    name: "Isabella Reed",
-    userName: "DevOps Engineer",
+    image: "https://i.pravatar.cc/150?img=60",
+    name: "Lisa Wang",
+    userName: "Product Manager",
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "The ongoing support from Mixio Labs has been outstanding. They continuously help us optimize our AI models and adapt to our evolving business needs.",
     rating: 4.9,
   },
 ];
@@ -81,11 +80,11 @@ export const TestimonialSection = () => {
     <section id="testimonials" className="container py-24 sm:py-32">
       <div className="text-center mb-8">
         <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-          Testimonials
+          Client Success Stories
         </h2>
 
         <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-          Hear What Our Clients are Saying
+          Trusted by Industry Leaders
         </h2>
       </div>
 
@@ -99,42 +98,46 @@ export const TestimonialSection = () => {
           {reviewList.map((review) => (
             <CarouselItem
               key={review.name}
-              className="md:basis-1/2 lg:basis-1/3"
+              className="md:basis-1/2 lg:basis-1/3 pl-4"
             >
-              <Card className="bg-muted/50 dark:bg-card">
-                <CardContent className="pt-6 pb-0">
-                  <div className="flex gap-1 pb-6">
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
-                  </div>
-                  {`"${review.comment}"`}
-                </CardContent>
-
+              <Card className="bg-muted/60 dark:bg-card">
                 <CardHeader>
-                  <div className="flex flex-row items-center gap-4">
+                  <div className="flex items-center gap-4">
                     <Avatar>
-                      <AvatarImage
-                        src="https://i.pravatar.cc/150?img=7"
-                        alt="radix"
-                      />
-                      <AvatarFallback>SV</AvatarFallback>
+                      <AvatarImage src={review.image} />
+                      <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
-
-                    <div className="flex flex-col">
+                    <div>
                       <CardTitle className="text-lg">{review.name}</CardTitle>
                       <CardDescription>{review.userName}</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
+
+                <CardContent>
+                  <div className="flex items-center gap-0.5 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-4 h-4 ${
+                          i < Math.floor(review.rating)
+                            ? "text-primary fill-primary"
+                            : "text-muted stroke-muted-foreground"
+                        }`}
+                      />
+                    ))}
+                    <span className="ml-2 text-sm text-muted-foreground">
+                      {review.rating.toFixed(1)}
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground">{review.comment}</p>
+                </CardContent>
               </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="hidden sm:flex" />
+        <CarouselNext className="hidden sm:flex" />
       </Carousel>
     </section>
   );

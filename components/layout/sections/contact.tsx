@@ -1,227 +1,150 @@
 "use client";
+
+import { useForm } from "react-hook-form";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardFooter,
+  CardDescription,
   CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
-import { Building2, Mail, MapPin } from "lucide-react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { Rocket, Mail, MessageSquare } from "lucide-react";
 
-const formSchema = z.object({
-  firstName: z.string().min(2).max(255),
-  lastName: z.string().min(2).max(255),
-  email: z.string().email(),
-  subject: z.string().min(2).max(255),
-  message: z.string(),
-});
+interface ContactFormData {
+  name: string;
+  email: string;
+  message: string;
+}
 
 export const ContactSection = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      subject: "AI Solution Inquiry",
-      message: "",
-    },
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactFormData>();
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    const { firstName, lastName, email, subject, message } = values;
-    console.log(values);
-
-    const mailToLink = `mailto:ajinkya.takawale97@gmail.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
-
-    window.location.href = mailToLink;
-  }
+  const onSubmit = (data: ContactFormData) => {
+    console.log(data);
+  };
 
   return (
     <section id="contact" className="container py-24 sm:py-32">
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 gap-8 place-items-center">
         <div>
-          <div className="mb-4">
-            <h2 className="text-lg text-primary mb-2 tracking-wider">
-              Contact Us
-            </h2>
-
-            <h2 className="text-3xl md:text-4xl font-bold">Transform Your AI Vision Into Reality</h2>
-          </div>
-          <p className="mb-8 text-muted-foreground lg:w-5/6">
-            Ready to accelerate your AI adoption? Get in touch with us to discuss your project 
-            and explore how we can help you build innovative AI solutions.
+          <h2 className="text-lg text-primary mb-2 tracking-wider">Contact Us</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Let&apos;s Build Your AI Solution
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Ready to transform your business with AI? Get in touch with our team to discuss 
+            your project requirements and explore how we can help you achieve your goals.
           </p>
 
-          <div className="flex flex-col gap-6">
-            <div>
-              <div className="flex gap-2 mb-2">
-                <Building2 className="text-primary" />
-                <div className="font-bold">Company</div>
-              </div>
-              <div className="text-muted-foreground">Mixio Labs</div>
-            </div>
+          <div className="space-y-4 mb-8">
+            <Card className="bg-muted/60">
+              <CardHeader className="space-y-1 flex flex-row items-center gap-4">
+                <div className="bg-primary/20 p-2.5 rounded-xl">
+                  <Rocket className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <CardTitle>Project Discussion</CardTitle>
+                  <CardDescription>
+                    Schedule a call to discuss your AI project
+                  </CardDescription>
+                </div>
+              </CardHeader>
+            </Card>
 
-            <div>
-              <div className="flex gap-2 mb-2">
-                <MapPin className="text-primary" />
-                <div className="font-bold">Locations</div>
-              </div>
-              <div className="text-muted-foreground">
-                <div>Pune • Bengaluru</div>
-                <div>Remote Worldwide</div>
-              </div>
-            </div>
+            <Card className="bg-muted/60">
+              <CardHeader className="space-y-1 flex flex-row items-center gap-4">
+                <div className="bg-primary/20 p-2.5 rounded-xl">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <CardTitle>Email Us</CardTitle>
+                  <CardDescription>
+                    <a href="mailto:contact@mixiolabs.com" className="hover:text-primary">
+                      contact@mixiolabs.com
+                    </a>
+                  </CardDescription>
+                </div>
+              </CardHeader>
+            </Card>
 
-            <div>
-              <div className="flex gap-2 mb-2">
-                <Mail className="text-primary" />
-                <div className="font-bold">Email</div>
-              </div>
-              <div className="text-muted-foreground">
-                <a href="mailto:ajinkya.takawale97@gmail.com" className="hover:text-primary transition-colors">
-                  ajinkya.takawale97@gmail.com
-                </a>
-              </div>
-            </div>
+            <Card className="bg-muted/60">
+              <CardHeader className="space-y-1 flex flex-row items-center gap-4">
+                <div className="bg-primary/20 p-2.5 rounded-xl">
+                  <MessageSquare className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <CardTitle>Quick Response</CardTitle>
+                  <CardDescription>
+                    We typically respond within 24 hours
+                  </CardDescription>
+                </div>
+              </CardHeader>
+            </Card>
           </div>
         </div>
 
-        <Card>
+        <Card className="w-full">
           <CardHeader>
-            <h3 className="text-lg font-bold">Send us a Message</h3>
+            <CardTitle>Send us a Message</CardTitle>
+            <CardDescription>
+              Fill out the form below and we&apos;ll get back to you soon.
+            </CardDescription>
           </CardHeader>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <FormField
-                    control={form.control}
-                    name="firstName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>First name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="John" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="lastName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Last name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Doe" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="john.doe@example.com"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
+          <CardContent>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <div>
+                <Input
+                  placeholder="Your Name"
+                  {...register("name", { required: true })}
                 />
+                {errors.name && (
+                  <span className="text-sm text-red-500">Name is required</span>
+                )}
+              </div>
 
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Subject</FormLabel>
-                      <Select
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                      >
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select a subject" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="AI Solution Inquiry">
-                            AI Solution Inquiry
-                          </SelectItem>
-                          <SelectItem value="Custom AI Development">
-                            Custom AI Development
-                          </SelectItem>
-                          <SelectItem value="Partnership">
-                            Partnership
-                          </SelectItem>
-                          <SelectItem value="Other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
+              <div>
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  {...register("email", {
+                    required: true,
+                    pattern: /^\S+@\S+$/i,
+                  })}
                 />
+                {errors.email && (
+                  <span className="text-sm text-red-500">
+                    Valid email is required
+                  </span>
+                )}
+              </div>
 
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Tell us about your project..."
-                          className="resize-none"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
+              <div>
+                <Textarea
+                  placeholder="Tell us about your project"
+                  className="min-h-[120px]"
+                  {...register("message", { required: true })}
                 />
-              </CardContent>
+                {errors.message && (
+                  <span className="text-sm text-red-500">
+                    Message is required
+                  </span>
+                )}
+              </div>
 
-              <CardFooter>
-                <Button type="submit" className="w-full">
-                  Send Message
-                </Button>
-              </CardFooter>
+              <Button type="submit" className="w-full">
+                Send Message
+              </Button>
             </form>
-          </Form>
+          </CardContent>
         </Card>
-      </section>
+      </div>
     </section>
   );
 };
