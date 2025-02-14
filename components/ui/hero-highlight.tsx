@@ -38,7 +38,7 @@ export const HeroHighlight = ({
     >
       <div className="pointer-events-none absolute inset-0 bg-dot-thick-neutral-200 dark:bg-dot-thick-neutral-800" />
       <motion.div
-        className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 bg-dot-thick-brand-orange group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 bg-dot-thick-primary group-hover:opacity-100"
         style={{
           WebkitMaskImage: useMotionTemplate`
             radial-gradient(
@@ -88,7 +88,7 @@ export const Highlight = ({
         display: "inline",
       }}
       className={cn(
-        `relative inline-block rounded-lg bg-gradient-to-r from-brand-orange to-brand-yellow px-1 pb-1 text-foreground/80 dark:text-white`,
+        `relative inline-block rounded-lg bg-gradient-to-r from-primary to-secondary px-1 pb-1 text-foreground/80 dark:text-white`,
         className,
       )}
     >
