@@ -91,7 +91,7 @@ export default function HeroLanding() {
                       variant: "default",
                       size: "lg",
                     }),
-                    "w-full border-brand-yellow text-brand-yellow hover:bg-brand-yellow/10 sm:w-auto"
+                    "w-full hover:bg-brand-yellow/10 sm:w-auto"
                   )}
                 >
                   Learn More
@@ -105,18 +105,18 @@ export default function HeroLanding() {
 
             <div className="relative">
               <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
-                <OrbitingCircles iconSize={40}>
-                  <Brain className="text-primary" />
-                  <MessageSquare className="text-primary" />
-                  <Bot className="text-primary" />
-                  <Sparkles className="text-primary" />
-                  <Cpu className="text-primary" />
+                <OrbitingCircles iconSize={32}>
+                  <Brain className="size-8 text-brand-coral" />
+                  <MessageSquare className="size-8 text-brand-orange" />
+                  <Bot className="size-8 text-brand-yellow" />
+                  <Sparkles className="size-8 text-brand-coral" />
+                  <Cpu className="size-8 text-brand-orange" />
                 </OrbitingCircles>
-                <OrbitingCircles iconSize={30} radius={100} reverse speed={2}>
-                  <Network className="text-primary" />
-                  <Database className="text-primary" />
-                  <Code2 className="text-primary" />
-                  <Brain className="text-primary" />
+                <OrbitingCircles iconSize={24} radius={100} reverse speed={2}>
+                  <Network className="size-6 text-brand-yellow" />
+                  <Database className="size-6 text-brand-coral" />
+                  <Code2 className="size-6 text-brand-orange" />
+                  <Brain className="size-6 text-brand-yellow" />
                 </OrbitingCircles>
               </div>
             </div>
