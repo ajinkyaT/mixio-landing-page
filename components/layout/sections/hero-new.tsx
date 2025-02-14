@@ -118,6 +118,11 @@ export default function HeroLanding() {
                   <Code2 className="size-6 text-brand-orange" />
                   <Brain className="size-6 text-brand-yellow" />
                 </OrbitingCircles>
+                <div
+                  className={cn(
+                    "absolute left-1/2 top-1/3 bottom-1/3 mx-auto w-1/2 -translate-x-1/2 rounded-full bg-brand-yellow/30 blur-3xl transition-opacity duration-1000"
+                  )}
+                />
               </div>
             </div>
           </div>
