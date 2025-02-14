@@ -4,7 +4,6 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
-
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
@@ -61,6 +60,12 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        brand: {
+          coral: "#FF5D51",
+          yellow: "#FFB800",
+          orange: "#FF8A00",
+          red: "#C41E3A",
         },
       },
       borderRadius: {
