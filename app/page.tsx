@@ -8,6 +8,7 @@ import HeroLanding from "@/components/layout/sections/hero-new";
 import { ServicesSection } from "@/components/layout/sections/services";
 import { TeamSection } from "@/components/layout/sections/team";
 import { TestimonialSection } from "@/components/layout/sections/testimonial";
+import { BrandHighlightedTitle } from "@/components/ui/brand-highlighted-title";
 
 export const metadata = {
   title: "Mixio Labs - AI Solutions Company",
@@ -45,7 +46,7 @@ export default function Home() {
       <ServicesSection />
       <div className="container flex flex-col items-center justify-center text-center py-8 md:py-12">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-          Why Choose <span className="text-primary">Mixio Labs</span>?
+          Why Choose <BrandHighlightedTitle>Mixio Labs</BrandHighlightedTitle>?
         </h2>
       </div>
       <BenefitsSection />
