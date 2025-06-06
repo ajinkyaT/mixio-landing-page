@@ -50,7 +50,7 @@ export const HeroSection = () => {
                 className={cn(
                   "group/arrow",
                   buttonVariants({ size: "lg" }),
-                  "w-auto font-bold",
+                  "w-auto font-bold"
                 )}
               >
                 {heroSection.ctaText}
@@ -64,8 +64,12 @@ export const HeroSection = () => {
             <Image
               width={1200}
               height={1200}
-              className="w-full md:w-[1200px] mx-auto rounded-lg relative rounded-lg leading-none flex items-center border border-t-2 border-secondary border-t-primary/30"
-              src={theme === "light" ? "/hero-image-light.jpeg" : "/hero-image-dark.jpeg"}
+              className="w-full md:w-[1200px] mx-auto rounded-lg relative leading-none flex items-center border border-t-2 border-secondary border-t-primary/30"
+              src={
+                theme === "light"
+                  ? "/hero-image-light.jpeg"
+                  : "/hero-image-dark.jpeg"
+              }
               alt="AI Solutions Dashboard"
             />
             <div className="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg"></div>

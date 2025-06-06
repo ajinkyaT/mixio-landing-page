@@ -91,10 +91,10 @@ export default function HeroLanding() {
                       variant: "default",
                       size: "lg",
                     }),
-                    "w-full hover:bg-brand-yellow/10 sm:w-auto"
+                    "w-full sm:w-auto"
                   )}
                 >
-                  Learn More
+                  {heroSection.ctaText}
                 </Link>
               </div>
 

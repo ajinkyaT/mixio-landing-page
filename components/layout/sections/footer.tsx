@@ -1,6 +1,5 @@
 import { Logo } from "@/components/ui/logo";
 import { Separator } from "@/components/ui/separator";
-import { ChevronsDownIcon } from "lucide-react";
 import Link from "next/link";
 
 export const FooterSection = () => {
@@ -15,7 +14,7 @@ export const FooterSection = () => {
               <Logo />
             </Link>
             <p className="mt-4 opacity-60">
-              Building Tomorrow's AI Solutions Today
+              Building Tomorrow&rsquo;s AI Solutions Today
             </p>
           </div>
 
