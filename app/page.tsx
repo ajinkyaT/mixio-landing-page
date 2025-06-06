@@ -52,7 +52,7 @@ export default function Home() {
       <BenefitsSection />
       <FeaturesSection />
       {/* <TeamSection /> */}
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       <ContactSection />
       <FAQSection />
       <FooterSection />
