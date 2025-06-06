@@ -23,6 +23,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ToggleTheme } from "./toogle-theme";
 import { Logo } from "../ui/logo";
+import { heroSection } from "@/config/landing";
 
 interface RouteProps {
   href: string;
@@ -39,10 +40,10 @@ const routeList: RouteProps[] = [
     href: "#testimonials",
     label: "Testimonials",
   },
-  {
-    href: "#team",
-    label: "Team",
-  },
+  // {
+  //   href: "#team",
+  //   label: "Team",
+  // },
   {
     href: "#contact",
     label: "Contact",
@@ -179,7 +180,7 @@ export const Navbar = () => {
         <div className="flex items-center gap-2">
           <ToggleTheme />
           <Button asChild>
-            <Link href="#">Try For Free Now</Link>
+            <Link href="#contact">{heroSection.ctaText}</Link>
           </Button>
         </div>
       </div>
